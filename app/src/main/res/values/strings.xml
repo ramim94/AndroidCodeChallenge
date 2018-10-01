@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidCodeChallenge</string>
+    <string name="apiURL">http://api.lamusica.com/api/categories</string>
+</resources>
