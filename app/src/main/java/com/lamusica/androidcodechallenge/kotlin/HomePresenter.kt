@@ -1,4 +1,4 @@
-package com.lamusica.androidcodechallenge
+package com.lamusica.androidcodechallenge.kotlin
 
 import android.content.Context
 import android.util.Log
@@ -7,10 +7,11 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.lamusica.androidcodechallenge.R
 import org.json.JSONObject
 
-class HomePresenter(val context: Context,val uiInterface: HomeInterface) {
-    lateinit var requstQueue : RequestQueue
+class HomePresenter(private val context: Context,private val uiInterface: HomeInterface) {
+    private lateinit var requstQueue : RequestQueue
 
     fun loadData(){
         //getting the String value of URL from strings.xml
@@ -21,9 +22,9 @@ class HomePresenter(val context: Context,val uiInterface: HomeInterface) {
 
         //creating the HTTP request object using volley's StringRequest
         val stringRequest= StringRequest(Request.Method.GET,apiURL, Response.Listener {
-            val completeApiResponse = JSONObject(it) as JSONObject
+            val completeApiResponse = JSONObject(it)
             //getting the Array named as 'data' in the Response
-            val dataArray= completeApiResponse.getJSONArray("data");
+            val dataArray= completeApiResponse.getJSONArray("data")
 
             //getting the 'title' and 'color' fields of the 6th element
             //we can also run a for loop here to get all the elements in the array

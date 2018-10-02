@@ -1,12 +1,12 @@
-package com.lamusica.androidcodechallenge
+package com.lamusica.androidcodechallenge.kotlin
 
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
+import com.lamusica.androidcodechallenge.R
 import kotlinx.android.synthetic.main.activity_home_ui.*
 
-class HomeViewController : AppCompatActivity() , HomeInterface{
+class HomeViewController : AppCompatActivity() , HomeInterface {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +15,7 @@ class HomeViewController : AppCompatActivity() , HomeInterface{
         //initializing the helper class to call api with 2 constructor,
         //first the context of the activity, second the Interface object to allow Presenter class
         //to make changes to the UI
-        val presenter = HomePresenter(this,this)
+        val presenter = HomePresenter(this, this)
 
         //setting button clickListener
         home_btn_call_api.setOnClickListener {
